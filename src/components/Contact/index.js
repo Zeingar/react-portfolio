@@ -1,30 +1,10 @@
 import { text } from '@fortawesome/fontawesome-svg-core'
-import { useRef, useState } from 'react'
-import emailjs from '@emailjs/browser'
+import { useState } from 'react'
+
 import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
 const Contact = ()=>{
     const[letterclass] = useState('text-animate')
-    const refForm=useRef
-    const sendemail = (e)=>{
-        e.preventDefault()
-        emailjs
-        .sendForm(
-            'gmail',
-            'template_bqozdvt',
-            refForm.current,
-            '4QS8ZY4IaoLItpBg9pi0Z',
-
-        )
-        .then(
-            ()=>{
-                alert('Message recieved')
-                window.location.reload(false)
-            }
-        )
-
-
-    }
     return(
     <>
     <div className='container contact-page'>
